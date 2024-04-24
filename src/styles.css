@@ -6,3 +6,7 @@ background: -webkit-linear-gradient(to right, #45B649, #DCE35B);  /* Chrome 10-2
 background: linear-gradient(to right, #45B649, #DCE35B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
+
+.titulo{
+    font-size: 10.px;
+}
