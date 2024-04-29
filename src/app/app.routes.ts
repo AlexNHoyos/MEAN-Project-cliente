@@ -1,4 +1,4 @@
-import { RouterModule } from '@angular/router';
+/*import { RouterModule } from '@angular/router';
 import { Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { ListarProductosComponent } from './components/listar-productos/listar-productos.component';
@@ -17,4 +17,4 @@ const routes: Routes =[
 })
 
 export class AppRoutingModule {}
-export { routes };
+export { routes };*/
