@@ -13,6 +13,8 @@ import { ListarProductosComponent } from './components/listar-productos/listar-p
 @NgModule({
   declarations: [
     AppComponent,
+    ListarProductosComponent,
+    CrearProductosComponent
   ],
   imports: [
     BrowserModule,
