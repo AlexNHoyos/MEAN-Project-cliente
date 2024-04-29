@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './listar-productos.component.css'
 })
 export class ListarProductosComponent {
-
+  constructor() { }
 }

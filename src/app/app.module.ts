@@ -1,21 +1,26 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+// Componentes
+import { AppComponent } from './app.component';
+import { CrearProductosComponent } from './components/crear-productos/crear-productos.component';
+import { ListarProductosComponent } from './components/listar-productos/listar-productos.component';
 
 @NgModule({
   declarations: [
+    AppComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
-  providers: []
+  providers: [],
+  bootstrap: [AppComponent]
 })
-export class AppModule {
-  ngDoBootstrap() {} // Define ngDoBootstrap para evitar un error de compilación
-}
-
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+export class AppModule { }
