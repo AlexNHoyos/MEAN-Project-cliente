@@ -1,4 +1,5 @@
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { ListarProductosComponent } from './components/listar-productos/listar-productos.component';
 import { CrearProductosComponent } from './components/crear-productos/crear-productos.component';
@@ -15,9 +16,5 @@ const routes: Routes =[
     exports: [RouterModule]
 })
 
-@NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule]
-})
 export class AppRoutingModule {}
 export { routes };
