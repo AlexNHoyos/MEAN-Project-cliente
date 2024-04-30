@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-crear-productos',
@@ -6,5 +7,19 @@ import { Component } from '@angular/core';
   styleUrl: './crear-productos.component.css'
 })
 export class CrearProductosComponent {
-  constructor() { }
+  
+  productoForm: FormGroup;
+
+  constructor(private fb:FormBuilder) {
+    this.productoForm = this.fb.group({
+      producto: ['', Validators.required],
+      categoria: ['', Validators.required],
+      ubicacion: ['', Validators.required],
+      precio: ['', Validators.required]
+    })
+   }
+
+  agregarProducto(){
+    console.log(this.productoForm)
+  }
 }
