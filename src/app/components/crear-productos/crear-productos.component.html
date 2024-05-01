@@ -8,22 +8,30 @@
                         <div class="mb-3">
                             <input type="text" formControlName="producto"
                             class="form-control form-control-lg" placeholder="Producto">
+                            <div class="text-danger" *ngIf="productoForm.get('producto')?.hasError('required') && productoForm.get('producto')?.touched"
+                            >El nombre del producto <strong>es obligatorio</strong></div>
                         </div>
                         <div class="mb-3">
                             <input type="text" formControlName="categoria"
                             class="form-control form-control-lg" placeholder="Categoria">
+                            <div class="text-danger" *ngIf="productoForm.get('categoria')?.hasError('required') && productoForm.get('categoria')?.touched"
+                            >El nombre de la categoria <strong>es obligatoria</strong></div>
                         </div>
                         <div class="mb-3">
                             <input type="text" formControlName="ubicacion"
                             class="form-control form-control-lg" placeholder="Ubicacion">
+                            <div class="text-danger" *ngIf="productoForm.get('ubicacion')?.hasError('required') && productoForm.get('ubicacion')?.touched"
+                            >El nombre de la ubicacion <strong>es obligatoria</strong></div>
                         </div>
                         <div class="mb-3">
                             <input type="number" formControlName="precio" 
                             class="form-control form-control-lg" placeholder="Precio">
+                            <div class="text-danger" *ngIf="productoForm.get('precio')?.hasError('required') && productoForm.get('precio')?.touched"
+                            >El precio <strong>es obligatorio</strong></div>
                         </div>
                         <div class="mb-3">
                             <button class="btn btn-secondary btn-lg float-start" routerLink="/">Volver</button>
-                            <button type="submit" class="btn btn-success btn-lg float-end">Aceptar</button>    
+                            <button type="submit" [disabled]="productoForm.invalid" class="btn btn-success btn-lg float-end">Aceptar</button>    
                         </div>
                     </form>
                 </div>
