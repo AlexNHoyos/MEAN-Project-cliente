@@ -22,7 +22,7 @@
                             <td>{{producto.precio | currency: 'USD'}}</td>
                             <td>
                                 <i class="fas fa-solid fa-trash"></i>
-                                <i class="fas fa-solid fa-pen-to-square"></i>
+                                <i (click)= "eliminarProducto(producto._id)" fas fa-solid fa-pen-to-square></i>
                             </td>
                           </tr>
                         </tbody>
