@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Producto } from '../../models/producto';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { ProductoService } from '../../services/producto.service';
 
 @Component({
   selector: 'app-crear-productos',
@@ -13,7 +14,7 @@ export class CrearProductosComponent {
   
   productoForm: FormGroup;
 
-  constructor(private fb:FormBuilder, private router:Router, private toastr: ToastrService) {
+  constructor(private fb:FormBuilder, private router:Router, private toastr: ToastrService, private _productoService:ProductoService) {
     this.productoForm = this.fb.group({
       producto: ['', Validators.required],
       categoria: ['', Validators.required],
@@ -33,7 +34,14 @@ export class CrearProductosComponent {
       precio: this.productoForm.get('precio')?.value
     }
 
-    this.toastr.success('El producto ha sido registrado satisfactoriamente', 'Producto registrado!')
-    this.router.navigate(['/'])
+    this._productoService.guardarProducto(PRODUCTO).subscribe(data => {
+      this.toastr.success('El producto ha sido registrado satisfactoriamente', 'Producto registrado!')
+      this.router.navigate(['/'])
+    }, error => {
+      console.log(error);
+      this.productoForm.reset();
+    })
+
+   
   }
 }
